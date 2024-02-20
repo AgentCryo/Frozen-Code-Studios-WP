@@ -8,13 +8,10 @@ export const Home = () => (
             <h1 className="default-font">Frozen Code Studios</h1>
         </div>
 
-        <header>
+        <div className="main-content">
             <h1>Welcome to My Webpage</h1>
-        </header>
-
-        <main>
             <p>This is the main content area.</p>
-        </main>
+        </div>
 
         <footer>
             <p>&copy; Frozen Code Studios 2024</p>
