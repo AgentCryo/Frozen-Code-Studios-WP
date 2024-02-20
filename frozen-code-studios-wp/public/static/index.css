@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: red;
+}
+
+#topBar {
+    width: 100%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+default-font {
+    font-family: "Protest Strike";
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    color: white;
+}

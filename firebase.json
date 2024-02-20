@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "frozen-code-studios-wp/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
