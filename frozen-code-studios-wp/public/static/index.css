@@ -3,7 +3,7 @@ body {
     padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: red;
+    background-color: darkred;
 }
 
 #topBar {
