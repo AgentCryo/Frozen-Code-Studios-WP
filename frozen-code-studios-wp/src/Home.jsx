@@ -9,12 +9,28 @@ export const Home = () => (
         </div>
 
         <div className="main-content">
-            <h1>Welcome to My Webpage</h1>
-            <p>This is the main content area.</p>
+            <div className="video-container">
+                <video
+                    width="100%"
+                    height="100%"
+                    controls="auto"
+                    style={{ objectFit: "cover" }} >
+                    <source src="videos/frozen-code-studios.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <h1>&emsp; To-do on Home</h1>
+            <p>Festured Trailer. </p>
+            <p>Launch/Advent Timer.</p>
+            <p>Studio Blog.</p>
+            <p>Upcoming Advents.</p>
+            <p>Interactive Polls.</p>
+            <p>Donations. </p>
         </div>
 
         <footer>
-            <p>&copy; Frozen Code Studios 2024</p>
+            <ct>&copy; Frozen Code Studios 2024</ct>
         </footer>
     </>
 )

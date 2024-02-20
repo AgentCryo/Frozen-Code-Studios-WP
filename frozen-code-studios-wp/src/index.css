@@ -21,8 +21,25 @@ body {
     color: white;
     width: 100%;
     height: auto;
-    padding: 0px;
+    padding-bottom: 70px;
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .video-container video {
+        border-radius: 10px;
+    }
 
 footer {
     position: fixed;
@@ -43,9 +60,35 @@ default-font {
 h1 {
     color: white;
     font-size: 30px;
+    padding-left: 20px;
+}
+
+ct {
+    color: white;
+    font-size: 18px;
+    padding-left: 20px;
+    padding: 5px;
+    margin: 0 auto;
 }
 
 p {
     color: white;
     font-size: 20px;
+    padding-left: 20px;
+}
+
+.dropdown {
+
+}
+
+.dropdown-content {
+
+}
+
+.dropdown-content a {
+
+}
+
+.dropdown-content a:hover {
+
 }
