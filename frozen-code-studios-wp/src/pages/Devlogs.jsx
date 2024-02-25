@@ -2,7 +2,7 @@ export const Page1 = () => {
   return (
     <>
       <div className='main-content'>
-        <h1>Page 1</h1>
+        <h1>Devlogs</h1>
       </div>
     </>
   );
