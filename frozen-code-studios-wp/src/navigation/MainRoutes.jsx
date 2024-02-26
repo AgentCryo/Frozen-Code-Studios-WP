@@ -2,8 +2,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { MainLayout } from '../components/MainLayout';
 import { Home } from '../pages/Home';
-import Page1 from '../pages/Page1';
-import Page2 from '../pages/Page2';
+import Page1 from '../pages/Place_Taker';
+import Page2 from '../pages/Meet_the_Team';
 
 const router = createBrowserRouter([
   {
@@ -15,12 +15,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'page1',
-        element: <Page1 />,
+        path: 'place_taker',
+        element: <Place_Taker />,
       },
       {
-        path: 'page2',
-        element: <Page2 />,
+        path: 'meet_the_team',
+        element: <Meet_the_Team />,
       },
     ],
   },

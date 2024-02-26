@@ -26,9 +26,10 @@ export const GamesMenu = () => {
         anchorRef={ref}
         onClose={() => setOpen(false)}
       >
-        <MenuItem onClick={() => navigate('/page1')}>DevLogs</MenuItem>
-        <MenuItem onClick={() => navigate('/page2')}>InterDev</MenuItem>
-        <MenuItem onClick={() => navigate('/')}>Bugs Report</MenuItem>
+            <MenuItem onClick={() => navigate('/devlogs')}>DevLogs</MenuItem>
+            <MenuItem onClick={() => navigate('/user_suggestions')}>User Suggestions</MenuItem>
+            <MenuItem onClick={() => navigate('/bug_reports')}>Bug Reports</MenuItem>
+            <MenuItem onClick={() => navigate('/games_fcs')}>All Games by FCS</MenuItem>
       </ControlledMenu>
     </div>
   );

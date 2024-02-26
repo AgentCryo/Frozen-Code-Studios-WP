@@ -26,8 +26,8 @@ export const StudioInfoMenu = () => {
         anchorRef={ref}
         onClose={() => setOpen(false)}
       >
-        <MenuItem onClick={() => navigate('/page1')}>Meet The Team</MenuItem>
-        <MenuItem onClick={() => navigate('/page2')}>Place Taker</MenuItem>
+        <MenuItem onClick={() => navigate('/meet_the_team')}>Meet The Team</MenuItem>
+        <MenuItem onClick={() => navigate('/place_taker')}>Place Taker</MenuItem>
       </ControlledMenu>
     </div>
   );
