@@ -4,6 +4,7 @@ import { MainLayout } from '../components/MainLayout';
 import { Home } from '../pages/Home';
 import Place_Taker from '../pages/Place_Taker';
 import Meet_the_Team from '../pages/Meet_the_Team';
+import Devlogs from '../pages/Devlogs'
 
 const router = createBrowserRouter([
   {
