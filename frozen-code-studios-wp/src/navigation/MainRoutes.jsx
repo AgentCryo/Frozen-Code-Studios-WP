@@ -2,9 +2,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { MainLayout } from '../components/MainLayout';
 import { Home } from '../pages/Home';
+
 import Place_Taker from '../pages/Place_Taker';
 import Meet_the_Team from '../pages/Meet_the_Team';
 import Devlogs from '../pages/Devlogs'
+import User_Suggestions from '../pages/User_Suggestions';
+import Bug_Reports from '../pages/Bug_Reports';
+import { Children } from 'react';
+import Games_FCS from '../pages/Games_FCS';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +31,30 @@ const router = createBrowserRouter([
         {
             path: 'devlogs',
             element: <Devlogs />,
+            children: [
+
+            ],
+        },
+        {
+            path: 'user_suggestions',
+            element: <User_Suggestions />,
+            children: [
+
+            ],
+        },
+        {
+            path: 'bug_reports',
+            element: <Bug_Reports />,
+            children: [
+
+            ],
+        },
+        {
+            path: 'games_fcs',
+            element: <Games_FCS />,
+            children: [
+
+            ],
         },
     ],
   },

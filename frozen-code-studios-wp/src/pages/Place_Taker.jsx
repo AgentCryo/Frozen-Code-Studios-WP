@@ -1,11 +1,11 @@
-export const Page1 = () => {
+export const Place_Taker = () => {
   return (
     <>
       <div className='main-content'>
-        <h1>Devlogs</h1>
+        <div className = "ct" >Sorry this page has not been added yet.</div>
       </div>
     </>
   );
 };
 
-export default Page1;
+export default Place_Taker;

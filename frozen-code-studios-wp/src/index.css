@@ -21,6 +21,7 @@ body {
     color: white;
     width: 100%;
     height: auto;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 
@@ -58,17 +59,17 @@ default-font {
 }
 
 h1 {
+    margin: 0px;
     color: white;
     font-size: 30px;
     padding-left: 20px;
 }
 
-ct {
+.ct {
     color: white;
-    font-size: 18px;
-    padding-left: 20px;
-    padding: 5px;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
 }
 
 p {
