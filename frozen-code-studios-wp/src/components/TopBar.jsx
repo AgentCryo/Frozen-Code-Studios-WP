@@ -1,6 +1,7 @@
 import GamesMenu from './topbar-menu-items/GamesMenu';
 import HomeMenu from './topbar-menu-items/HomeMenu';
 import StudioInfoMenu from './topbar-menu-items/StudioInfoMenu';
+import DiscordMenu from './topbar-menu-items/DiscordMenu'; 
 
 export const TopBar = () => {
 
@@ -11,6 +12,7 @@ export const TopBar = () => {
         <HomeMenu />
         <GamesMenu />
         <StudioInfoMenu />
+        <DiscordMenu />
       </div>
     </div>
   );

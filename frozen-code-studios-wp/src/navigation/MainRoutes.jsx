@@ -10,6 +10,7 @@ import User_Suggestions from '../pages/User_Suggestions';
 import Bug_Reports from '../pages/Bug_Reports';
 import { Children } from 'react';
 import Games_FCS from '../pages/Games_FCS';
+import Comunity_Guidlines from '../pages/Comunity_Guidlines';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
 
             ],
         },
+        {
+            path: 'comunity_guidlines',
+            element: <Comunity_Guidlines/>,
+        }
     ],
   },
 ]);
