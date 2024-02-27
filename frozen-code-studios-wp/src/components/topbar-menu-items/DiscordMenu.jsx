@@ -26,7 +26,7 @@ export const DiscordMenu = () => {
                 anchorRef={ref}
                 onClose={() => setOpen(false)}
             >
-                <MenuItem href= "https://discord.com/invite/nspawJ8ZH2">Join</MenuItem>
+                <MenuItem href= "https://discord.com/invite/nspawJ8ZH2" target = "_blank">Join</MenuItem>
                 <MenuItem onClick={() => navigate('/comunity_guidlines')}>Comunity Guidlines</MenuItem>
             </ControlledMenu>
         </div>
