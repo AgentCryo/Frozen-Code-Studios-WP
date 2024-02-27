@@ -1,3 +1,7 @@
+import FirebaseProvider from '../providers/FirebaseConfig'
+import AuthProvider from '../providers/AuthConfig'
+
+
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { MainLayout } from '../components/MainLayout';
@@ -11,6 +15,8 @@ import Bug_Reports from '../pages/Bug_Reports';
 import { Children } from 'react';
 import Games_FCS from '../pages/Games_FCS';
 import Comunity_Guidlines from '../pages/Comunity_Guidlines';
+import { FirebaseProvider } from '../providers/FirebaseProvider';
+import { AuthProvider } from '../providers/AuthProvider';
 
 const router = createBrowserRouter([
   {

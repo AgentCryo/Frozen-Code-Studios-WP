@@ -42,6 +42,14 @@ body {
         border-radius: 10px;
     }
 
+/*.content-box {
+
+}
+
+.content-box .sign-in {
+
+}*/
+
 .szh-menu {
     z-index: 1000;
     background-color: #222;
@@ -60,6 +68,11 @@ body {
     text-decoration: none;
 }
 
+default-font {
+    font-family: "Protest Strike";
+    font-weight: 400;
+    font-style: normal;
+}
 
 footer {
     position: fixed;
@@ -69,12 +82,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-}
-
-default-font {
-    font-family: "Protest Strike";
-    font-weight: 400;
-    font-style: normal;
 }
 
 h1 {
