@@ -17,6 +17,7 @@ export const SignInPopup = (props) => {
         <button>Create Account</button>
         <div className='p2' />
         <button onClick={closePopup}>Cancel</button>
+        <div className='p2' />
       </div>
     </div>
   ) : (

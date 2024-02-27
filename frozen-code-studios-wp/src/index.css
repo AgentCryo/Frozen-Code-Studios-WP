@@ -38,46 +38,54 @@ body {
     align-items: center;
 }
 
-    .video-container video {
-        border-radius: 10px;
-    }
+.video-container video {
+    border-radius: 10px;
+}
 
-    .sign-in-window {
-        width: 300px;
-        padding: 20px;
-        background-color: #234343;
-        border: 3px solid white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      }
-      
-      .p2 {
-        color: white;
-        margin: 10px 0 5px;
-      }
-      
-      input {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #61dafb;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      
-      button:hover {
-        background-color: #4fa3d1;
-      }
+.sign-in-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    height: 68%;
+    width: 40%;
+    padding: 20px;
+    background-color: #234343;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.p2 {
+    color: white;
+    margin: 10px 0 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 2px solid #61dafb;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Adjust the margin to create the desired gap */
+}
+
+button:hover {
+    background-color: #4fa3d1;
+}
 
 .szh-menu {
     z-index: 1000;
@@ -114,14 +122,14 @@ footer {
 }
 
 h1 {
-    margin: 0px;
+    margin: 0;
     color: white;
     font-size: 30px;
     padding-left: 20px;
 }
 
-.h2 {
-    margin: 0px;
+h2 {
+    margin: 0;
     margin-top: 10px;
     color: white;
     font-size: 25px;
@@ -130,8 +138,8 @@ h1 {
     font-weight: bold;
 }
 
-.h3 {
-    margin: 0px;
+h3 {
+    margin: 0;
     color: white;
     font-size: 30px;
     padding-left: 20px;
@@ -139,7 +147,7 @@ h1 {
     font-weight: bold;
 }
 
-.ct {
+ct {
     color: white;
     text-align: center;
     font-size: 30px;
@@ -152,15 +160,14 @@ p {
     padding-left: 20px;
 }
 
-.p1 {
+p1 {
     color: white;
     font-size: 17px;
     padding-left: 20px;
-    text-align: center
+    text-align: center;
 }
 
-.t {
+t {
     color: white;
-    font-size: 10;
-}
-
+    font-size: 10px;
+};
