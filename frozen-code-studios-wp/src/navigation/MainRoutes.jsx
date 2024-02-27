@@ -1,7 +1,6 @@
 import { FirebaseProvider } from '../providers/FirebaseProvider';
 import { AuthProvider } from '../providers/AuthProvider';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Children } from 'react';
 
 import { MainLayout } from '../components/MainLayout';
 
