@@ -42,13 +42,42 @@ body {
         border-radius: 10px;
     }
 
-/*.content-box {
-
-}
-
-.content-box .sign-in {
-
-}*/
+    .sign-in-window {
+        width: 300px;
+        padding: 20px;
+        background-color: #234343;
+        border: 3px solid white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      
+      .p2 {
+        color: white;
+        margin: 10px 0 5px;
+      }
+      
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #61dafb;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #4fa3d1;
+      }
 
 .szh-menu {
     z-index: 1000;
