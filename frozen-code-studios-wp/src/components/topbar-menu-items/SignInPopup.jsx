@@ -1,17 +1,21 @@
+import { useState } from 'react';
+import {useAuthContext} from '../providers/AuthProvider';
 import './SignInPopup.css';
+
+const {register} = useAuthContext();
 
 export const SignInPopup = (props) => {
   const closePopup = props.closePopup;
-
+  
   return props.showPopup ? (
     <div className='popup'>
       <div className='sign-in-window'>
         <div className='p2'>Username</div>
-        <input type='text' name='UserName' />
+        <input type='text' name='UserName' value={login_data.UserName}/>
         <div className='p2'>Gmail / Email</div>
-        <input type='text' name='Gmail' />
+        <input type='text' name='Gmail' value={login_data.Password}/>
         <div className='p2'>Password</div>
-        <input type='password' name='Password' />
+        <input type='password' name='Password' value={login_data.Password}/>
         <button>Login</button>
         <div className='p2' />
         <button>Create Account</button>
@@ -22,7 +26,16 @@ export const SignInPopup = (props) => {
     </div>
   ) : (
     ''
-  );
-};
-
-export default SignInPopup;
+    );
+    const login_data = useState({
+      UserName: '',
+      Gmail: '',
+      Password: '',
+    })
+  };
+  
+  export const UGP_varification = () => {
+    console.log(login_data)
+  }
+  export default SignInPopup;
+  
