@@ -1,8 +1,7 @@
-import FirebaseProvider from '../providers/FirebaseConfig'
-import AuthProvider from '../providers/AuthConfig'
-
-
+import { FirebaseProvider } from '../providers/FirebaseProvider';
+import { AuthProvider } from '../providers/AuthProvider';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Children } from 'react';
 
 import { MainLayout } from '../components/MainLayout';
 import { Home } from '../pages/Home';
@@ -12,11 +11,8 @@ import Meet_the_Team from '../pages/Meet_the_Team';
 import Devlogs from '../pages/Devlogs'
 import User_Suggestions from '../pages/User_Suggestions';
 import Bug_Reports from '../pages/Bug_Reports';
-import { Children } from 'react';
 import Games_FCS from '../pages/Games_FCS';
 import Comunity_Guidlines from '../pages/Comunity_Guidlines';
-import { FirebaseProvider } from '../providers/FirebaseProvider';
-import { AuthProvider } from '../providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -72,5 +68,11 @@ const router = createBrowserRouter([
 ]);
 
 export const MainRoutes = () => {
-  return <RouterProvider router={router} />;
+    return (
+        <FirebaseProvider>
+            <AuthProvider>
+                <RouterProvider router={router} />
+            </AuthProvider>
+        </FirebaseProvider>
+    );
 };
