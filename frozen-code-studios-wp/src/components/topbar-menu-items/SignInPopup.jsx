@@ -19,8 +19,6 @@ export const SignInPopup = (props) => {
   const [email, setEmail] = useState('')
   const [emailError, setemailError] = useState(null)
   
-  setTimeout(delay, 0.1f)
-  
   if (!loginCreateOT) {
     return props.showPopup ? (
       <div className='popup'>
@@ -87,16 +85,13 @@ export const SignInPopup = (props) => {
           console.log(email)
           console.log(password)
         } else {
-          delay
-          setusernameError("Error invalid username, do not leave feild blank.")
+          setTimeout(() => setusernameError("Error invalid username, do not leave feild blank."), 1000)
         }
       } else {
-        delay
-        setpasswordError("Error invalid password, check for spaces and or the password has to be over 4 chars.")
+        setTimeout(() => setpasswordError("Error invalid password, check for spaces and or the password has to be over 4 chars."), 1000)
       }
     } else {
-      delay
-      setemailError("Error invalid email/gmail, please put a valid email/gmail.")
+      setTimeout(() => setemailError("Error invalid email/gmail, please put a valid email/gmail."), 1000)
     }
 
   }
