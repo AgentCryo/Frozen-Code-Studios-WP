@@ -54,7 +54,8 @@ const AuthProvider = (props) => {
                         console.log('Got user profile:', profileData, docSnap);
                         if (!profileData) {
                             setAuthErrorMessages([
-                                `No profile doc found in Firestore at: ${docRef.path}`,
+                                null
+                                //`No profile doc found in Firestore at: ${docRef.path}`,
                             ]);
                         }
                         setProfile(profileData);
@@ -127,6 +128,7 @@ const AuthProvider = (props) => {
             };
 
             await setDoc(userDocRef, userDocData);
+            setAuthErrorMessages(null);
             return true;
         } catch (ex) {
             console.error(`registerFunction() failed with: ${ex.message}`);
@@ -155,6 +157,7 @@ const AuthProvider = (props) => {
                 console.log(`Logged in as uid(${user.uid}) email(${user.email})`);
             }
             setUser(user);
+            setAuthErrorMessages(null);
             return true;
         } catch (ex) {
             let msg = `Login failure for email(${email}: ${ex.message})`;
@@ -169,6 +172,7 @@ const AuthProvider = (props) => {
             setUser(null); // shut down the listeners
             await signOut(myAuth);
             console.log('Signed Out');
+            setAuthErrorMessages(null);
             return true;
         } catch (ex) {
             console.error(ex);

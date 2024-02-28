@@ -9,6 +9,8 @@ export const SignInPopup = (props) => {
 
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
+  const { login } = useAuthContext();
+  const { authErrorMessages } = useAuthContext();
 
   const [username, setUsername] = useState('')
   const [usernameError, setusernameError] = useState(null)
@@ -23,13 +25,14 @@ export const SignInPopup = (props) => {
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
+          { authErrorMessages && <span style={{color: 'red'}}>{authErrorMessages}</span> }
           <div className='p2'>Gmail / Email</div>
           <input type='text' name='Gmail' onChange={(e) => setUsername(e.target.value)} />
 
           <div className='p2'>Password</div>
           <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)} />
 
-          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); loginFunct;}}>Login</button>
+          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); loginFunct();}}>Login</button>
 
           <button onClick={() => { loginCreateIN(true); setemailError(''); setpasswordError(''); setusernameError('')}}>Don't Have an Accoun?t</button>
 
@@ -55,7 +58,7 @@ export const SignInPopup = (props) => {
           <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)}/>
           { passwordError && <span style={{color: 'red'}}>{passwordError}</span> }
 
-          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); createFunct;}}>Create Account</button>
+          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); createFunct();}}>Create Account</button>
 
           <button onClick={() => { loginCreateIN(false); setemailError(''); setpasswordError(''); setusernameError('')}}>Have an Account?</button>
 
@@ -66,14 +69,16 @@ export const SignInPopup = (props) => {
       ''
     );
   }
-  function loginFunct () {
-    console.log(email)
-    console.log(password)
-  }
-  
+
   function isValidEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
+  }
+
+  function loginFunct () {
+    login(email, password)
+    console.log(email)
+    console.log(password)
   }
 
   function createFunct () {
@@ -85,13 +90,13 @@ export const SignInPopup = (props) => {
           console.log(email)
           console.log(password)
         } else {
-          setTimeout(() => setusernameError("Error invalid username, do not leave feild blank."), 1000)
+          setTimeout(() => setusernameError("Error invalid username, do not leave feild blank."), 100)
         }
       } else {
-        setTimeout(() => setpasswordError("Error invalid password, check for spaces and or the password has to be over 4 chars."), 1000)
+        setTimeout(() => setpasswordError("Error invalid password, check for spaces and or the password has to be over 4 chars."), 100)
       }
     } else {
-      setTimeout(() => setemailError("Error invalid email/gmail, please put a valid email/gmail."), 1000)
+      setTimeout(() => setemailError("Error invalid email/gmail, please put a valid email/gmail."), 100)
     }
 
   }
