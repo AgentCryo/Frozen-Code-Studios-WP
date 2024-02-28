@@ -20,10 +20,10 @@ export const SignInPopup = (props) => {
       <div className='popup'>
         <div className='sign-in-window'>
           <div className='p2'>Gmail / Email</div>
-          <input type='text' name='Gmail' onChange={(value) => setUsername(value)} />
+          <input type='text' name='Gmail' onChange={(e) => setUsername(e.target.value)} />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' onChange={(value) => setPassword(value)} />
+          <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)} />
 
           <button onClick={loginFunct}>Login</button>
 
@@ -40,13 +40,13 @@ export const SignInPopup = (props) => {
       <div className='popup'>
         <div className='sign-in-window'>
           <div className='p2'>Username</div>
-          <input type='text' name='UserName' onChange={(value) => setUsername(value)} />
+          <input type='text' name='UserName' onChange={(e) => setUsername(e.target.value)} />
 
           <div className='p2'>Gmail / Email</div>
-          <input type='text' name='Gmail' onChange={(value) => setEmail(value)} />
+          <input type='text' name='Gmail' onChange={(e) => setEmail(e.target.value)} />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' onChange={(value) => setPassword(value)}/>
+          <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)}/>
 
           <button onClick={createFunct}>Create Account</button>
 
@@ -69,7 +69,7 @@ function loginFunct () {
 function createFunct () {
   console.log(username)
   console.log(email)
-  console.log(pasword)
+  console.log(password)
 }
 
 export default SignInPopup;
