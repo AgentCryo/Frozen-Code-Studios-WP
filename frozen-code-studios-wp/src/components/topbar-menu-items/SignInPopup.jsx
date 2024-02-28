@@ -32,7 +32,7 @@ export const SignInPopup = (props) => {
           <button onClick={PressedLogin}>Login</button>
           <div className='p2' />
 
-          <button>Create Account</button>
+          <button>Don't Have an Account</button>
           <div className='p2' />
 
           <button onClick={closePopup}>Cancel</button>
@@ -55,12 +55,12 @@ export const SignInPopup = (props) => {
           <div className='p2'>Password</div>
           <input type='password' name='Password' value={loginData.Password} />
 
-          <button onClick={PressedLogin}>Login</button>
+          <button onClick={PressedLogin}>Create Account</button>
           <div className='p2' />
 
-          <button>Create Account</button>
+          <button>Have an Account?</button>
           <div className='p2' />
-          
+
           <button onClick={closePopup}>Cancel</button>
           <div className='p2' />
         </div>
