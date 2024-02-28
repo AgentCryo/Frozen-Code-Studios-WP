@@ -2,11 +2,14 @@ import GamesMenu from './topbar-menu-items/GamesMenu';
 import HomeMenu from './topbar-menu-items/HomeMenu';
 import StudioInfoMenu from './topbar-menu-items/StudioInfoMenu';
 import DiscordMenu from './topbar-menu-items/DiscordMenu'; 
+import { useAuthContext } from '../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 
 export const TopBar = (props) => {
 
   const showLoginFunction = props.showLoginFunction;
+
+  const { profile } = useAuthContext();
 
   return (
     <div id='topBar'>
@@ -20,7 +23,7 @@ export const TopBar = (props) => {
           style={{ color: 'white', textDecoration: 'none' }}
           onClick={showLoginFunction}
         >
-          Login
+          {profile?.displayName || "Login"}
         </Link>
       </div>
     </div>
