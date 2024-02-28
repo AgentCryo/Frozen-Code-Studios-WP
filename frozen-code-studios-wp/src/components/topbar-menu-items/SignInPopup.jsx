@@ -3,13 +3,13 @@ import { useAuthContext } from '../../providers/AuthProvider';
 import './SignInPopup.css';
 
 export const SignInPopup = (props) => {
-  
-  let loginCreate = false;
-  
+
+  const [loginCreateOT, loginCreateIN] = useState(false);
+
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
   
-  if (!loginCreate) {
+  if (!loginCreateOT) {
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
@@ -21,7 +21,7 @@ export const SignInPopup = (props) => {
 
           <button>Login</button>
 
-          <button onClick={() => {loginCreate = false}}>Don't Have an Account</button>
+          <button onClick={loginCreateIN(true)}>Don't Have an Account</button>
 
           <button onClick={closePopup}>Cancel</button>
         </div>
@@ -44,7 +44,7 @@ export const SignInPopup = (props) => {
 
           <button>Create Account</button>
 
-          <button onClick={loginCreate = false}>Have an Account?</button>
+          <button onClick={loginCreateIN(false)}>Have an Account?</button>
 
           <button onClick={closePopup}>Cancel</button>
         </div>
@@ -53,10 +53,6 @@ export const SignInPopup = (props) => {
       ''
     );
   }
-};
-
-export const UGP_varification = (loginData) => {
-  console.log(loginData);
 };
 
 export default SignInPopup;
