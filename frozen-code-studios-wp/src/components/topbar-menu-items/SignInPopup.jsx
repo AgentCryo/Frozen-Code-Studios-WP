@@ -12,7 +12,7 @@ export const SignInPopup = (props) => {
 
   [username, setUsername] = useState('')
   
-  [pasword, setPasword] = useState('')
+  [password, setPassword] = useState('')
   [email, setEmail] = useState('')
   
   if (!loginCreateOT) {
@@ -23,7 +23,7 @@ export const SignInPopup = (props) => {
           <input type='text' name='Gmail' onChange={(value) => setUsername(value)} />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' onChange={(value) => setPasword(value)} />
+          <input type='password' name='Password' onChange={(value) => setPassword(value)} />
 
           <button onClick={loginFunct}>Login</button>
 
@@ -46,7 +46,7 @@ export const SignInPopup = (props) => {
           <input type='text' name='Gmail' onChange={(value) => setEmail(value)} />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' onChange={(value) => setPasword(value)}/>
+          <input type='password' name='Password' onChange={(value) => setPassword(value)}/>
 
           <button onClick={createFunct}>Create Account</button>
 
@@ -61,12 +61,12 @@ export const SignInPopup = (props) => {
   }
 };
 
-loginFunct (); {
+function loginFunct () {
   console.log(email)
   console.log(pasword)
 }
 
-createFunct (); {
+function createFunct () {
   console.log(username)
   console.log(email)
   console.log(pasword)
