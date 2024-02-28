@@ -59,17 +59,17 @@ export const SignInPopup = (props) => {
       ''
     );
   }
+  function loginFunct () {
+    console.log(email)
+    console.log(pasword)
+  }
+  
+  function createFunct () {
+    console.log(username)
+    console.log(email)
+    console.log(password)
+  }
 };
 
-function loginFunct () {
-  console.log(email)
-  console.log(pasword)
-}
-
-function createFunct () {
-  console.log(username)
-  console.log(email)
-  console.log(password)
-}
 
 export default SignInPopup;
