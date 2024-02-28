@@ -1,22 +1,31 @@
-import { useState } from 'react';
-import {useAuthContext} from '../providers/AuthProvider';
+import React, { useState } from 'react';
+import { useAuthContext } from '../../providers/AuthProvider';
 import './SignInPopup.css';
-
-const {register} = useAuthContext();
 
 export const SignInPopup = (props) => {
   const closePopup = props.closePopup;
-  
+  const { register } = useAuthContext();
+
+  const loginData = useState({
+    UserName: '',
+    Gmail: '',
+    Password: '',
+  });
+
+  const PressedLogin = () => {
+    console.log('Login Data:', loginData);
+  };
+
   return props.showPopup ? (
     <div className='popup'>
       <div className='sign-in-window'>
         <div className='p2'>Username</div>
-        <input type='text' name='UserName' value={login_data.UserName}/>
+        <input type='text' name='UserName' value={loginData.UserName} />
         <div className='p2'>Gmail / Email</div>
-        <input type='text' name='Gmail' value={login_data.Password}/>
+        <input type='text' name='Gmail' value={loginData.Gmail} />
         <div className='p2'>Password</div>
-        <input type='password' name='Password' value={login_data.Password}/>
-        <button>Login</button>
+        <input type='password' name='Password' value={loginData.Password} />
+        <button onClick={PressedLogin}>Login</button>
         <div className='p2' />
         <button>Create Account</button>
         <div className='p2' />
@@ -26,16 +35,11 @@ export const SignInPopup = (props) => {
     </div>
   ) : (
     ''
-    );
-    const login_data = useState({
-      UserName: '',
-      Gmail: '',
-      Password: '',
-    })
-  };
-  
-  export const UGP_varification = () => {
-    console.log(login_data)
-  }
-  export default SignInPopup;
-  
+  );
+};
+
+export const UGP_varification = (loginData) => {
+  console.log(loginData);
+};
+
+export default SignInPopup;
