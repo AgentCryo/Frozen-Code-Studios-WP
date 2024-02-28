@@ -10,10 +10,10 @@ export const SignInPopup = (props) => {
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
 
-  [username, setUsername] = useState('')
+  const [username, setUsername] = useState('')
   
-  [password, setPassword] = useState('')
-  [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
   
   if (!loginCreateOT) {
     return props.showPopup ? (
