@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAuthContext } from '../../providers/AuthProvider';
 import './SignInPopup.css';
-import { FieldValue } from 'firebase/firestore';
+//import { FieldValue } from 'firebase/firestore';
 
 export const SignInPopup = (props) => {
-
-  let warningString = '';
 
   const [loginCreateOT, loginCreateIN] = useState(false);
 
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
 
-  const [Error, setError] = useState(null)
-
   const [username, setUsername] = useState('')
+  const [usernameError, setusernameError] = useState(null)
   
   const [password, setPassword] = useState('')
+  const [passwordError, setpasswordError] = useState(null)
+  
   const [email, setEmail] = useState('')
+  const [emailError, setemailError] = useState(null)
+  
+  setTimeout(delay, 0.1f)
   
   if (!loginCreateOT) {
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
-          <div className='p2'>{ Error && <span style={{color: 'red'}}>{Error}</span> }</div>
           <div className='p2'>Gmail / Email</div>
           <input type='text' name='Gmail' onChange={(e) => setUsername(e.target.value)} />
 
           <div className='p2'>Password</div>
           <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)} />
 
-          <button onClick={loginFunct}>Login</button>
+          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); loginFunct;}}>Login</button>
 
-          <button onClick={() => loginCreateIN(true)}>Don't Have an Accoun?t</button>
+          <button onClick={() => { loginCreateIN(true); setemailError(''); setpasswordError(''); setusernameError('')}}>Don't Have an Accoun?t</button>
 
           <button onClick={closePopup}>Cancel</button>
         </div>
@@ -46,16 +47,19 @@ export const SignInPopup = (props) => {
         <div className='sign-in-window'>
           <div className='p2'>Username</div>
           <input type='text' name='UserName' onChange={(e) => setUsername(e.target.value)} />
+          { usernameError && <span style={{color: 'red'}}>{usernameError}</span> }       
 
           <div className='p2'>Gmail / Email</div>
           <input type='text' name='Gmail' onChange={(e) => setEmail(e.target.value)} />
+          { emailError && <span style={{color: 'red'}}>{emailError}</span> }
 
           <div className='p2'>Password</div>
           <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)}/>
+          { passwordError && <span style={{color: 'red'}}>{passwordError}</span> }
 
-          <button onClick={createFunct}>Create Account</button>
+          <button onClick={() => {setemailError(''); setpasswordError(''); setusernameError(''); createFunct;}}>Create Account</button>
 
-          <button onClick={() => loginCreateIN(false)}>Don't Have an Account?</button>
+          <button onClick={() => { loginCreateIN(false); setemailError(''); setpasswordError(''); setusernameError('')}}>Have an Account?</button>
 
           <button onClick={closePopup}>Cancel</button>
         </div>
@@ -66,7 +70,7 @@ export const SignInPopup = (props) => {
   }
   function loginFunct () {
     console.log(email)
-    console.log(pasword)
+    console.log(password)
   }
   
   function isValidEmail(email) {
@@ -76,20 +80,23 @@ export const SignInPopup = (props) => {
 
   function createFunct () {
     if (isValidEmail(email)) {
-      if (password.length <= 4) {
+      if (password.length >= 4) {
         if (username !== '') {
           register(email, password, username)
           console.log(username)
           console.log(email)
           console.log(password)
         } else {
-          setError = "Error invalid username, do not leave feild blank."
+          delay
+          setusernameError("Error invalid username, do not leave feild blank.")
         }
       } else {
-        setError = "Error invalid password, check for spaces and or the password has to be over 4 chars."
+        delay
+        setpasswordError("Error invalid password, check for spaces and or the password has to be over 4 chars.")
       }
     } else {
-      setError = "Error invalid email/gmail, please put a valid email/gmail."
+      delay
+      setemailError("Error invalid email/gmail, please put a valid email/gmail.")
     }
 
   }
