@@ -3,40 +3,27 @@ import { useAuthContext } from '../../providers/AuthProvider';
 import './SignInPopup.css';
 
 export const SignInPopup = (props) => {
-
-  let Login_Create = false;
-
+  
+  let loginCreate = false;
+  
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
-
-  const loginData = useState({
-    UserName: '',
-    Gmail: '',
-    Password: '',
-  });
-
-  const PressedLogin = () => {
-    console.log('Login Data:', loginData);
-  };
-
-  if (!Login_Create) {
+  
+  if (!loginCreate) {
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
           <div className='p2'>Gmail / Email</div>
-          <input type='text' name='Gmail' value={loginData.Gmail} />
+          <input type='text' name='Gmail' />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' value={loginData.Password} />
+          <input type='password' name='Password' />
 
-          <button onClick={PressedLogin}>Login</button>
-          <div className='p2' />
+          <button>Login</button>
 
-          <button>Don't Have an Account</button>
-          <div className='p2' />
+          <button onClick={() => {loginCreate = false}}>Don't Have an Account</button>
 
           <button onClick={closePopup}>Cancel</button>
-          <div className='p2' />
         </div>
       </div>
     ) : (
@@ -47,22 +34,19 @@ export const SignInPopup = (props) => {
       <div className='popup'>
         <div className='sign-in-window'>
           <div className='p2'>Username</div>
-          <input type='text' name='UserName' value={loginData.UserName} />
+          <input type='text' name='UserName' />
 
           <div className='p2'>Gmail / Email</div>
-          <input type='text' name='Gmail' value={loginData.Gmail} />
+          <input type='text' name='Gmail' />
 
           <div className='p2'>Password</div>
-          <input type='password' name='Password' value={loginData.Password} />
+          <input type='password' name='Password' />
 
-          <button onClick={PressedLogin}>Create Account</button>
-          <div className='p2' />
+          <button>Create Account</button>
 
-          <button>Have an Account?</button>
-          <div className='p2' />
+          <button onClick={loginCreate = false}>Have an Account?</button>
 
           <button onClick={closePopup}>Cancel</button>
-          <div className='p2' />
         </div>
       </div>
     ) : (
