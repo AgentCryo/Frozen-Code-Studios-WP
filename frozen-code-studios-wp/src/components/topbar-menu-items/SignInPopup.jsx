@@ -27,7 +27,7 @@ export const SignInPopup = (props) => {
         <div className='sign-in-window'>
           { authErrorMessages && <span style={{color: 'red'}}>{authErrorMessages}</span> }
           <div className='p2'>Gmail / Email</div>
-          <input type='text' name='Gmail' onChange={(e) => setUsername(e.target.value)} />
+          <input type='text' name='Gmail' onChange={(e) => setEmail(e.target.value)} />
 
           <div className='p2'>Password</div>
           <input type='password' name='Password' onChange={(e) => setPassword(e.target.value)} />
@@ -76,16 +76,16 @@ export const SignInPopup = (props) => {
   }
 
   function loginFunct () {
-    login(email, password)
-    console.log(email)
+    
     console.log(password)
+    login(email.toLocaleLowerCase(), password);
   }
 
   function createFunct () {
     if (isValidEmail(email)) {
       if (password.length >= 4) {
         if (username !== '') {
-          register(email, password, username)
+          register(email.toLocaleLowerCase(), password, username)
           console.log(username)
           console.log(email)
           console.log(password)
