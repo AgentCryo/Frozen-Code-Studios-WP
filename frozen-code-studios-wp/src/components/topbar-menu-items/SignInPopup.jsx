@@ -5,13 +5,15 @@ import './SignInPopup.css';
 
 export const SignInPopup = (props) => {
 
+  
   const [loginCreateOT, loginCreateIN] = useState(false);
-
+  
   const closePopup = props.closePopup;
   const { register } = useAuthContext();
   const { login } = useAuthContext();
+  const { user } = useAuthContext();
   const { authErrorMessages } = useAuthContext();
-
+  
   const [username, setUsername] = useState('')
   const [usernameError, setusernameError] = useState(null)
   
@@ -22,6 +24,11 @@ export const SignInPopup = (props) => {
   const [emailError, setemailError] = useState(null)
   
   if (!loginCreateOT) {
+
+    if (user) {
+      closePopup();
+    }
+
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
@@ -43,6 +50,11 @@ export const SignInPopup = (props) => {
       ''
     );
   } else {
+
+    if (user) {
+      closePopup();
+    }
+
     return props.showPopup ? (
       <div className='popup'>
         <div className='sign-in-window'>
@@ -76,7 +88,6 @@ export const SignInPopup = (props) => {
   }
 
   function loginFunct () {
-    
     console.log(password)
     login(email.toLocaleLowerCase(), password);
   }
