@@ -10,7 +10,6 @@ export const TopBar = (props) => {
 
   const showLoginFunction = props.showLoginFunction;
 
-  const { profile } = useAuthContext();
   const { user } = useAuthContext();
 
   return (
@@ -22,8 +21,8 @@ export const TopBar = (props) => {
         <StudioInfoMenu />
         <DiscordMenu />
         <div> { user 
-            ? <Link className='t' onClick={showLoginFunction}> {profile?.displayName || "Login"} </Link> 
-            : <UserMenu />
+            ? <UserMenu /> 
+            : <Link className='t' onClick={showLoginFunction}>Login</Link> 
           } </div>
       </div>
     </div>

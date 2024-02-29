@@ -5,13 +5,14 @@ import '@szhsin/react-menu/dist/transitions/slide.css';
 import { useAuthContext } from '../../providers/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 
-export const GamesMenu = () => {
+export const UserMenu = () => {
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const { anchorProps, hoverProps } = useHover(isOpen, setOpen);
 
   const navigate = useNavigate();
   const { logout } = useAuthContext();
+  const { profile } = useAuthContext();
 
   return (
     <div style={{ padding: '0px 10px 0px 10px' }}>
@@ -19,9 +20,7 @@ export const GamesMenu = () => {
         ref={ref}
         {...anchorProps}
         style={{ color: 'white', textDecoration: 'none' }}
-      >
-        Games
-      </Link>
+      >{profile?.displayName || "Login"}</Link>
       <ControlledMenu
         {...hoverProps}
         state={isOpen ? 'open' : 'closed'}
@@ -37,4 +36,4 @@ export const GamesMenu = () => {
   );
 };
 
-export default GamesMenu;
+export default UserMenu;
