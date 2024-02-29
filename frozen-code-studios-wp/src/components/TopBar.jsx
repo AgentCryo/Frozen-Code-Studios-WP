@@ -13,8 +13,8 @@ export const TopBar = (props) => {
 
   return (
     <div id='topBar'>
-      <h1 className='default-font'>Frozen Code Studios</h1>
-      <div style={{ padding: '10px', display: 'flex', flexDirection: 'row' }}>
+      <h1 className='sn'>Frozen Code Studios</h1>
+      <div style={{ padding: '10px', display: 'flex'}}>
         <HomeMenu />
         <GamesMenu />
         <StudioInfoMenu />
