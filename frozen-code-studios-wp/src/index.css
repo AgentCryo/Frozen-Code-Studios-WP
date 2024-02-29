@@ -169,5 +169,8 @@ p {
 
 .t {
     color: white;
-    font-size: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    flex: auto;
+    text-align: right;
 };
