@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import { useAuthContext } from '../../providers/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const UserMenu = () => {
   const ref = useRef(null);
@@ -16,11 +16,9 @@ export const UserMenu = () => {
 
   return (
     <div style={{ padding: '0px 10px 0px 10px' }}>
-      <Link
-        ref={ref}
-        {...anchorProps}
-        style={{ color: 'white', textDecoration: 'none' }}
-      >{profile?.displayName || "Login"}</Link>
+      <p className='t' ref={ref} {...anchorProps} style={{ color: 'white', textDecoration: 'none' }}>
+        {profile?.displayName}
+        </p>
       <ControlledMenu
         {...hoverProps}
         state={isOpen ? 'open' : 'closed'}

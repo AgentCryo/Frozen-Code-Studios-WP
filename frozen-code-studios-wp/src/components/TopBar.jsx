@@ -4,7 +4,6 @@ import StudioInfoMenu from './topbar-menu-items/StudioInfoMenu';
 import DiscordMenu from './topbar-menu-items/DiscordMenu'; 
 import UserMenu from './topbar-menu-items/UserMenu';
 import { useAuthContext } from '../providers/AuthProvider';
-import { Link } from 'react-router-dom';
 
 export const TopBar = (props) => {
 
@@ -22,7 +21,7 @@ export const TopBar = (props) => {
         <DiscordMenu />
         <div> { user 
             ? <UserMenu /> 
-            : <Link className='t' onClick={showLoginFunction}>Login</Link> 
+            : <p className='t' onClick={showLoginFunction}>Login</p> 
           } </div>
       </div>
     </div>
