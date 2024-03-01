@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router';
-import { TopBar } from './TopBar';
+import {Outlet} from 'react-router';
+import {TopBar} from './TopBar';
 import SignInPopup from './topbar-menu-items/SignInPopup';
-import { useState } from 'react';
+import {useState} from 'react';
 
 export const MainLayout = () => {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -15,10 +15,7 @@ export const MainLayout = () => {
       <footer>
         <div>&copy; Frozen Code Studios 2024</div>
       </footer>
-      <SignInPopup
-        showPopup={showLoginPopup}
-        closePopup={() => setShowLoginPopup(false)}
-      />
+      <SignInPopup showPopup={showLoginPopup} closePopup={() => setShowLoginPopup(false)} />
     </div>
   );
 };
