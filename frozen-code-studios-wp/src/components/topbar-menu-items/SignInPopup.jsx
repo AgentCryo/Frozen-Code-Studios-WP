@@ -88,7 +88,6 @@ export const SignInPopup = (props) => {
   }
 
   function loginFunct () {
-    console.log(password)
     login(email.toLocaleLowerCase(), password);
   }
 

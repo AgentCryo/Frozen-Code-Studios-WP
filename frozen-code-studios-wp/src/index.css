@@ -81,7 +81,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 20px; /* Adjust the margin to create the desired gap */
+    margin-bottom: 20px;
 }
 
 button:hover {
@@ -142,6 +142,8 @@ h1 {
 
 .h3 {
     margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     color: white;
     font-size: 30px;
     padding-left: 20px;
@@ -174,6 +176,9 @@ p {
     font-size: 15px;
     text-decoration: none;
     margin-left: auto;
+    position: relative;
+    left: 100%;
+    float: right;
 };
   
 .sn {

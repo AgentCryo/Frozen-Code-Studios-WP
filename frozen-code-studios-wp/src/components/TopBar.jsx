@@ -13,16 +13,22 @@ export const TopBar = (props) => {
 
   return (
     <div id='topBar'>
-      <h1 className='sn'>Frozen Code Studios</h1>
-      <div style={{ padding: '10px', display: 'flex'}}>
-        <HomeMenu />
-        <GamesMenu />
-        <StudioInfoMenu />
-        <DiscordMenu />
-        <div> { user 
-            ? <UserMenu /> 
-            : <p className='t' onClick={showLoginFunction}>Login</p> 
-          } </div>
+      <div>
+        <div>
+          <h1 className='sn'>Frozen Code Studios</h1>
+          <div style={{ padding: '10px', display: 'flex'}}>
+            <HomeMenu />
+            <GamesMenu />
+            <StudioInfoMenu />
+            <DiscordMenu />
+          </div>
+        </div>
+        <div>
+          <div style={{ padding: '10px', display: 'flex'}}> { user 
+              ? <UserMenu /> 
+              : <p className='t' onClick={showLoginFunction}>Login</p> 
+            } </div>
+        </div>
       </div>
     </div>
   );
