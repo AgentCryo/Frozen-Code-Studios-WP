@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import {useAuthContext} from '../../providers/AuthProvider';
 import './SignInPopup.css';
-import {getAuth, sendSignInLinkToEmail} from 'firebase/auth';
 //import { FieldValue } from 'firebase/firestore';
 
 export const SignInPopup = (props) => {
@@ -10,8 +9,8 @@ export const SignInPopup = (props) => {
   const closePopup = props.closePopup;
   const {register} = useAuthContext();
   const {login} = useAuthContext();
+  const {profile} = useAuthContext();
   const {user} = useAuthContext();
-  const {auth, actionCodeSettings} = getAuth();
   const {authErrorMessages} = useAuthContext();
 
   const [username, setUsername] = useState('');
@@ -23,10 +22,8 @@ export const SignInPopup = (props) => {
   const [email, setEmail] = useState('');
   const [emailError, setemailError] = useState(null);
 
-  const [notification, setnotification] = useState(null);
-
   if (!loginCreateOT) {
-    if (user.email) {
+    if (user) {
       closePopup();
     }
 
@@ -76,7 +73,6 @@ export const SignInPopup = (props) => {
     return props.showPopup ? (
       <div className="popup">
         <div className="sign-in-window">
-          <div className="p2">{notification}</div>
           <div className="p2">Username</div>
           <input type="text" name="UserName" onChange={(e) => setUsername(e.target.value)} />
           {usernameError && <span style={{color: 'red'}}>{usernameError}</span>}
@@ -136,18 +132,6 @@ export const SignInPopup = (props) => {
           console.log(username);
           console.log(email);
           console.log(password);
-          sendSignInLinkToEmail(auth, email, actionCodeSettings)
-            .then(() => {
-              // The link was successfully sent. Inform the user.
-              setnotification('Email/Gmail Sent, Please verify your email.');
-              // Save the email locally so you don't need to ask the user for it again
-              // if they open the link on the same device.
-              window.localStorage.setItem('emailForSignIn', email);
-              // ...
-            })
-            .catch(() => {
-              null;
-            });
         } else {
           setTimeout(
             () => setusernameError('Error invalid username, do not leave field blank.'),

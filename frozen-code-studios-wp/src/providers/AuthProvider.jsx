@@ -116,6 +116,7 @@ const AuthProvider = (props) => {
         email: email,
         displayName: displayName,
         dateCreated: serverTimestamp(),
+        emailVerified: user.emailVerified,
       };
 
       await setDoc(userDocRef, userDocData);
