@@ -9,6 +9,7 @@ import {useNavigate} from 'react-router-dom';
 export const UserMenu = () => {
   const ref = useRef(null);
   const auth = getAuth();
+  const user = getAuth();
   const [isOpen, setOpen] = useState(false);
   const {anchorProps, hoverProps} = useHover(isOpen, setOpen);
 
@@ -39,7 +40,7 @@ export const UserMenu = () => {
         <MenuItem
           onClick={() => {
             sendEmailVerification(auth.currentUser).then(() => {
-              openNotification;
+              openNotification();
               if (!closePopup) {
                 return (
                   <div className="notification-window">

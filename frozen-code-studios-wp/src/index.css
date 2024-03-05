@@ -1,205 +1,212 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background-color: black;
-    font-family: "Trebuchet MS", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: black;
+  font-family: 'Trebuchet MS', Tahoma, sans-serif;
 }
 
 #topBar {
-    width: 100%;
-    height: 70px;
-    border-bottom: 3px solid white;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 20px;
+  width: 100%;
+  height: 70px;
+  border-bottom: 3px solid white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .main-content {
-    background-color: #111;
-    color: white;
-    width: 100%;
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 70px;
+  background-color: #111;
+  color: white;
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 70px;
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .video-container video {
-    border-radius: 10px;
+  border-radius: 10px;
+}
+
+.content-tt {
+  width: 80%;
+  /*max-width: 800px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
 }
 
 .sign-in-window {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    height: 68%;
-    width: 40%;
-    padding: 20px;
-    background-color: #1D3354;
-    border: 3px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  height: 68%;
+  width: 40%;
+  padding: 20px;
+  background-color: #1d3354;
+  border: 3px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .notification-window {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    height: 68%;
-    width: 40%;
-    padding: 20px;
-    background-color: #1D3354;
-    border: 3px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  height: 68%;
+  width: 40%;
+  padding: 20px;
+  background-color: #1d3354;
+  border: 3px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
-
 .p2 {
-    color: white;
-    margin: 10px 0 15px;
+  color: white;
+  margin: 10px 0 15px;
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 2px solid #61dafb;
-    border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #14709C;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #14709c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 button:hover {
-    background-color: #4fa3d1;
+  background-color: #4fa3d1;
 }
 
 .szh-menu {
-    z-index: 1000;
-    background-color: #222;
+  z-index: 1000;
+  background-color: #222;
 }
 
 .szh-menu__item--hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .szh-menu__item {
-    color: white;
+  color: white;
 }
 
 .szh-menu__item--anchor {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 default-font {
-    font-family: "Protest Strike";
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Protest Strike';
+  font-weight: 400;
+  font-style: normal;
 }
 
 footer {
-    font-family: 'Times New Roman', Times, serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 h1 {
-    color: white;
-    font-size: 30px;
-    padding-left: 0px;
+  color: white;
+  font-size: 30px;
+  padding-left: 0px;
 }
 
 .h2 {
-    margin: 0;
-    margin-top: 10px;
-    color: white;
-    font-size: 25px;
-    padding-left: 20px;
-    text-align: center;
-    font-weight: bold;
+  margin: 0;
+  margin-top: 10px;
+  color: white;
+  font-size: 25px;
+  padding-left: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .h3 {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    color: white;
-    font-size: 30px;
-    padding-left: 20px;
-    text-align: center;
-    font-weight: bold;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 30px;
+  padding-left: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .ct {
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
 }
 
 p {
-    color: white;
-    font-size: 20px;
-    padding-left: 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 .p1 {
-    color: white;
-    font-size: 17px;
-    padding-left: 20px;
-    text-align: center;
+  color: white;
+  font-size: 17px;
+  padding-left: 20px;
+  text-align: center;
 }
 
 .t {
-    color: white;
-    font-size: 15px;
-    text-decoration: none;
-    padding-right: 20px;
-    position: relative;
-};
-  
-.sn {
-    font-size: 20px;
-    padding: 0px;
-    margin: 0px;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    padding-left: 0px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  padding-right: 20px;
+  position: relative;
 }
 
+.sn {
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-left: 0px;
+}
