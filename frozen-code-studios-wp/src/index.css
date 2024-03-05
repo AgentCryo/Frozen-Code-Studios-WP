@@ -43,15 +43,6 @@ body {
   border-radius: 10px;
 }
 
-.content-tt {
-  width: 80%;
-  /*max-width: 800px;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-}
-
 .sign-in-window {
   position: fixed;
   top: 50%;
@@ -209,4 +200,17 @@ p {
   margin-block-start: 0em;
   margin-block-end: 0em;
   padding-left: 0px;
+}
+
+.wt {
+  width: 100;
+  max-width: 50%;
+  /*max-width: 800px;*/
+}
+
+.content-tt {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
 }
