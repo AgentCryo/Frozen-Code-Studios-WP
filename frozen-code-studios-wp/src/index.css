@@ -22,8 +22,14 @@ body {
   color: white;
   width: 100%;
   height: auto;
-  padding-top: 10px;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
+}
+
+.darkened-content {
+  background-color: #191919;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .video-container {
@@ -184,12 +190,11 @@ p {
   font-size: 17px;
   padding-left: 20px;
   display: flex;
-  text-align: center;
-  text-align: justify;
+  text-align: left;
 }
 
 .text-container {
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
@@ -222,5 +227,6 @@ p {
   width: 100%;
   gap: 20px;
   padding: 20px;
+  padding-top: 0px;
   column-gap: 0px;
 }

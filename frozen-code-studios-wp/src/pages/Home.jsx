@@ -2,6 +2,7 @@ export const Home = () => {
   return (
     <>
       <div className="main-content">
+        <h1 className="h3">Studio Logo Here</h1>
         <div className="content-tt">
           <div className="video-container">
             <video width="100%" height="100%" controls="auto" style={{objectFit: 'cover'}}>
@@ -28,7 +29,6 @@ export const Home = () => {
             qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <h1 className="h3">Studio Logo Here</h1>
       </div>
     </>
   );
