@@ -151,7 +151,7 @@ h1 {
   color: white;
   font-size: 25px;
   padding-left: 20px;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
 }
 
@@ -183,7 +183,14 @@ p {
   color: white;
   font-size: 17px;
   padding-left: 20px;
+  display: flex;
   text-align: center;
+  text-align: justify;
+}
+
+.text-container {
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .t {
