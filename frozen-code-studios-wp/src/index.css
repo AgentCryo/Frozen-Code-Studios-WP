@@ -28,8 +28,9 @@ body {
 
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 800px;
+  width: 50%;
+  /*max-width: 800px;*/
+  max-width: 50%;
   overflow: hidden;
   border-radius: 10px;
   margin: 0 auto;
@@ -189,7 +190,7 @@ p {
   color: white;
   font-size: 15px;
   text-decoration: none;
-  padding-right: 20px;
+  padding-right: 30px;
   position: relative;
 }
 
@@ -203,9 +204,10 @@ p {
 }
 
 .wt {
-  width: 100;
-  max-width: 50%;
-  /*max-width: 800px;*/
+  width: 50%;
+  margin-top: 30px;
+  padding-right: 40px;
+  text-align: justify;
 }
 
 .content-tt {
@@ -213,4 +215,5 @@ p {
   width: 100%;
   gap: 20px;
   padding: 20px;
+  column-gap: 0px;
 }
