@@ -1,10 +1,10 @@
 import {useState, useRef} from 'react';
 import {useAuthContext} from './../providers/AuthProvider';
-import {doc, getDoc, setDoc} from 'firebase/firestore';
-import {useFirebaseContext} from '../providers/FirebaseProvider';
+//import {doc, setDoc} from 'firebase/firestore';
+//import {useFirebaseContext} from '../providers/FirebaseProvider';
 
 export const Home = async () => {
-  const {myFS} = useFirebaseContext();
+  //const {myFS} = useFirebaseContext();
 
   const {profile} = useAuthContext();
   const [editMode, setEditMode] = useState(false);
@@ -17,11 +17,11 @@ export const Home = async () => {
   const handleSaveClick = async () => {
     setEditMode(false);
 
-    let DocRef = doc(myFS, 'web-data', 'home-video-text');
-    let DocData = {
-      text: videotext,
-    };
-    await setDoc(DocRef, DocData);
+    //  let DocRef = doc(myFS, 'web-data', 'home-video-text');
+    //  let DocData = {
+    //    text: videotext,
+    //  };
+    //  await setDoc(DocRef, DocData);
   };
 
   const handleTabPress = (e) => {
@@ -33,14 +33,14 @@ export const Home = async () => {
     setText(currentText);
   };
 
-  const docRef = doc(myFS, 'web-data', 'home-video-text');
-  const docSnap = await getDoc(docRef);
+  //const docRef = doc(myFS, 'web-data', 'home-video-text');
+  //const docSnap = await getDoc(docRef);
 
-  if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
-  } else {
-    console.log('No such document!');
-  }
+  //if (docSnap.exists()) {
+  //  console.log('Document data:', docSnap.data());
+  //} else {
+  //  console.log('No such document!');
+  //}
   const [videotext, setText] = useState('temp');
 
   return (
