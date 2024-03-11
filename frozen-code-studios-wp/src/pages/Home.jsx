@@ -1,14 +1,15 @@
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import {useAuthContext} from './../providers/AuthProvider';
-//import {doc, setDoc} from 'firebase/firestore';
-//import {useFirebaseContext} from '../providers/FirebaseProvider';
+import {doc, getDoc, setDoc} from 'firebase/firestore';
+import {useFirebaseContext} from '../providers/FirebaseProvider';
 
-export const Home = async () => {
-  //const {myFS} = useFirebaseContext();
+export const Home = () => {
+  const {myFS} = useFirebaseContext();
 
   const {profile} = useAuthContext();
   const [editMode, setEditMode] = useState(false);
   const textareaRef = useRef();
+  const [videoDescription, setVideoDescription] = useState('Loading Text...');
 
   const handleEditClick = () => {
     setEditMode(!editMode);
@@ -17,36 +18,43 @@ export const Home = async () => {
   const handleSaveClick = async () => {
     setEditMode(false);
 
-    //  let DocRef = doc(myFS, 'web-data', 'home-video-text');
-    //  let DocData = {
-    //    text: videotext,
-    //  };
-    //  await setDoc(DocRef, DocData);
+    let DocRef = doc(myFS, 'web-data', 'home');
+    let DocData = {
+      videoDescription: videoDescription,
+    };
+    await setDoc(DocRef, DocData);
   };
 
   const handleTabPress = (e) => {
     e.preventDefault();
 
     const {selectionStart, selectionEnd} = textareaRef.current;
-    const currentText = videotext.slice(0, selectionStart) + '   ' + videotext.slice(selectionEnd);
+    const currentText =
+      videoDescription.slice(0, selectionStart) + '    ' + videoDescription.slice(selectionEnd);
 
-    setText(currentText);
+    setVideoDescription(currentText);
   };
 
-  //const docRef = doc(myFS, 'web-data', 'home-video-text');
-  //const docSnap = await getDoc(docRef);
+  const handleEnterPress = (e) => {};
 
-  //if (docSnap.exists()) {
-  //  console.log('Document data:', docSnap.data());
-  //} else {
-  //  console.log('No such document!');
-  //}
-  const [videotext, setText] = useState('temp');
+  useEffect(() => {
+    const getVideoText = async () => {
+      const docRef = doc(myFS, 'web-data', 'home');
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setVideoDescription(docSnap.data().videoDescription);
+      }
+    };
+
+    getVideoText();
+  }, [myFS]);
+  console.log('data being sent to Firestore:', JSON.stringify(videoDescription));
 
   return (
     <>
       <div className="main-content">
         <h1 className="h3">Studio Logo Here</h1>
+        <h1 className="ppp">Pixel Perfect Play, Every Day.</h1>
         <div className="content-tt">
           <div className="video-container">
             <video width="100%" height="100%" controls="auto" style={{objectFit: 'cover'}}>
@@ -54,14 +62,36 @@ export const Home = async () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          {!editMode && <p className="wt">{videotext}</p>}
+          {!editMode && (
+            <p
+              className="wt"
+              style={{
+                whiteSpace: 'pre-wrap',
+                lineHeight: '1.5',
+                textIndent: '0.5em',
+                marginLeft: '1em',
+              }}
+            >
+              {
+                videoDescription /*.split('   ').map((section, index) => (
+    <span key={index} style={{ display: 'block', marginLeft: '-1em', marginRight: '1em' }}>{section}</span>
+    ))*/
+              }
+            </p>
+          )}
           {editMode && (
             <textarea
               className="wt"
               ref={textareaRef}
-              value={videotext}
-              onChange={(e) => setText(e.target.value)}
-              onKeyDown={(e) => e.key === 'Tab' && handleTabPress(e)}
+              value={videoDescription}
+              onChange={(e) => setVideoDescription(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Tab') {
+                  handleTabPress(e);
+                } else if (e.key === 'Enter') {
+                  handleEnterPress(e);
+                }
+              }}
             />
           )}
         </div>
@@ -91,5 +121,4 @@ export const Home = async () => {
     </>
   );
 };
-
 export default Home;
