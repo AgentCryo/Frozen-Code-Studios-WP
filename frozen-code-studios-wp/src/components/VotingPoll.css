@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Voting-Container {
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#Voting-Box {
+  background-color: #0a100d;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  padding-bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+  border-color: #0fa3b1;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.Question {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.Options {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  align-items: flex-end;
+}
+
+.Buttons-Container {
+  display: flex;
+  overflow: hidden;
+}
+
+.Column {
+  background-color: #0a100d;
+  height: 355px;
+  width: 150px;
+  margin-right: 0px;
+  border-color: #0fa3b1;
+  border-style: solid;
+  border-width: 2px;
+  border-right-width: 1px;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  position: relative;
+  overflow: hidden; /* Ensure vote count text doesn't overflow button */
+}
+
+.Column p.q {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  margin-top: 10px;
+}
+
+.Column p.text-below {
+  position: absolute;
+  bottom: 5px; /* Adjust as needed */
+  left: 0;
+  right: 0;
+}
+
+.Column-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.Column-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right-width: 2px;
+}
+
+.Column:last-child {
+  margin-right: 0;
+}
+
+.Column:hover {
+  background-color: #1f1f1f67;
+}
+
+.q {
+  margin: 0 auto;
+  padding: 0px;
+  top: -100px;
+  position: relative;
+  align-self: flex-start;
+  margin-bottom: 0 auto;
+}
+
+.text-below {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 0px;
+}

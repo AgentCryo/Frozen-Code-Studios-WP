@@ -2,6 +2,7 @@ import {useState, useRef, useEffect} from 'react';
 import {useAuthContext} from './../providers/AuthProvider';
 import {doc, getDoc, setDoc} from 'firebase/firestore';
 import {useFirebaseContext} from '../providers/FirebaseProvider';
+import VotingPoll from '../components/VotingPoll';
 
 export const Home = () => {
   const {myFS} = useFirebaseContext();
@@ -117,6 +118,8 @@ export const Home = () => {
             </button>
           </div>
         )}
+
+        <VotingPoll />
       </div>
     </>
   );

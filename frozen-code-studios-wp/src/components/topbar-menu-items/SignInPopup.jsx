@@ -56,7 +56,7 @@ export const SignInPopup = (props) => {
               setusernameError('');
             }}
           >
-            Don't Have an Accoun?t
+            Don't Have an Account?
           </button>
 
           <button onClick={closePopup}>Cancel</button>

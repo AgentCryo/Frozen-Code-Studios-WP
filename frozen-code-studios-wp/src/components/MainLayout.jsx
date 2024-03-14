@@ -13,7 +13,7 @@ export const MainLayout = () => {
         <Outlet /> {/* This is where the "children" routes will be rendered */}
       </div>
       <footer>
-        <div>&copy; Frozen Code Studios 2024</div>
+        <div>Frozen Code Studios 2024</div>
       </footer>
       <SignInPopup showPopup={showLoginPopup} closePopup={() => setShowLoginPopup(false)} />
     </div>
